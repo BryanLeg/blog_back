@@ -42,7 +42,6 @@ const getPost = (req, res) => {
 const editPost = (req, res) => {
   const { title, text } = req.body;
   const { id } = req.params;
-  console.log("ça marche");
 
   db.query(
     "UPDATE posts SET title = ?, post_text = ? WHERE id = ?",
