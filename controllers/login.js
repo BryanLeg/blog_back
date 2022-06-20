@@ -25,7 +25,7 @@ const login = (req, res) => {
         const id = new Date().getTime();
 
         const token = jwt.sign({ id, userName }, process.env.JWT_SECRET, {
-          expiresIn: "30d",
+          expiresIn: "1h",
         });
 
         if (!isMatch) {
