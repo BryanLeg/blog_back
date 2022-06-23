@@ -8,7 +8,7 @@ const login = (req, res) => {
   const password = req.body.password;
 
   db.query(
-    "SELECT * FROM admins WHERE email = ?",
+    "SELECT * FROM users WHERE email = ?",
     email,
     async (err, result) => {
       if (err) {
@@ -29,7 +29,7 @@ const login = (req, res) => {
         });
 
         if (!isMatch) {
-          msg = "invalid cretentials";
+          msg = "invalid credentials";
         }
 
         res.send({ isMatch, msg, token });
